@@ -59,3 +59,4 @@ elif a.lower() == "no" :
     print("Game ended.")
 else:
     print("Wrong answer.")
+
