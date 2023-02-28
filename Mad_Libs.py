@@ -33,19 +33,40 @@ def story_2():
                 
         print(story2)
 
+        
+def story_3():
+        print("Now you have to enter several objects' names. Let's start.")
+         
+        story3 = 'Dear <persons_name>, I am writing to you from a <adjective> castle in an enchanted forest. I found myself here one day after going for a ride on a <color> <animal> in <place>. There are <adjective2> <magical_creatures> and <adjective3> <magical_creatures2> here! In the <room_in_a_house> there is a pool full of <noun>. I fall asleep each night on a <noun2> of <noun_plural3> and dream of <adjective4> <noun_plural4>. It feels as though I have lived here for <number> <measure_of_time>. I hope one day you can visit, although the only way to get here now is <verb_ending_in_ing> on a <adjective5> <noun5>!!'
+        objects = ["<persons_name>", "<adjective>", "<color>", "<animal>", "<place>","<adjective2>", "<magical_creatures>", "<adjective3>", "<magical_creatures2>", "<room_in_a_house>", "<noun>", "<noun2>", "<noun_plural3>", "<adjective4>", "<noun_plural4>", "<number>", "<measure_of_time>", "<verb_ending_in_ing>", "<adjective5>", "<noun5>"]
+        user_inputs = {}
+            
+        for x in objects:
+            user_inputs[x] = input("Enter a " + x + ": ")
+            
+        for objects, value in user_inputs.items():
+            story3 = story3.replace(objects, value)
+                
+        print(story3)        
+        
+        
+        
 print("Hello, we are going to play a game.")
 a = input("Are you ready? (yes/no): ")
 
 if  a.lower() == "yes" :
-    b = input("Now you have to choose a template(1, 2 or type r(for random choice)): " )
+    b = input("Now you have to choose a template(1, 2, 3 or type r(for random choice)): " )
     if b == "1":
         story_1()
        
     elif b == "2":
         story_2()
+        
+    elif b == "3":
+        story_3()
 
     elif b == "r":
-       b = random.randint(1,2)
+       b = random.randint(1,3)
        if b == 1:
             story_1()
        else:
@@ -59,3 +80,4 @@ elif a.lower() == "no" :
     print("Game ended.")
 else:
     print("Wrong answer.")
+
